@@ -28,8 +28,9 @@ open class AssetsPhotoViewController: UIViewController {
         let buttonItem = UIBarButtonItem(title: String(key: "Cancel"), style: .plain, target: self, action: #selector(pressedCancel(button:)))
         return buttonItem
     }()
-    fileprivate lazy var doneButtonItem: UIBarButtonItem = {
-        let buttonItem = UIBarButtonItem(title: String(key: "Done"), style: .plain, target: self, action: #selector(pressedDone(button:)))
+    open var doneButtonTitle = "Done"
+    open lazy var doneButtonItem: UIBarButtonItem = {
+        let buttonItem = UIBarButtonItem(title: doneButtonTitle, style: .plain, target: self, action: #selector(pressedDone(button:)))
         return buttonItem
     }()
     fileprivate let emptyView: AssetsEmptyView = {
